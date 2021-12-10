@@ -48,3 +48,28 @@ You should create a Javascript file called jQueryTest.js locally to this HTML fi
 ## Task 11 / Advanced
 - Create a variable `var totalRows = 15;` which allows you to dynamically create as many rows required by overwriting `#plane`
 - Ensure all functionality from the previous tasks still operate on any sized aircraft.
+
+## Task 12 / Super Advance
+- Create a jSON file with the following: 
+```{
+  "rows": 20,
+  "covidRestrictions": true,
+  "unavailable": [
+    "1D",
+    "3F",
+    "4B",
+    "5F",
+    "7A",
+    "8A",
+    "8B",
+    "8C",
+    "9F",
+    "10C",
+    "11D",
+    "11F",
+    "13A",
+    "14D",
+    "16D"
+  ]
+}```
+- On page load, load the jSON file and apply the data against your seat map.
