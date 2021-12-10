@@ -1,5 +1,6 @@
 # jQuery DOM Manipulation - Aircraft Seat Selector
-You should create a Javascript file called jQueryTest.js locally to this HTML file - all code should be in this file. Do not edit this HTML document.
+You should create a Javascript file called jQueryTest.js locally to this HTML file - all code should be in this file. Do not edit this HTML document.\
+\
 *Hint: Functions you may need - [.each()](https://api.jquery.com/each/) [.parent()](https://api.jquery.com/parent/) [.data()](https://api.jquery.com/data/)*
 
 ## Task 1
