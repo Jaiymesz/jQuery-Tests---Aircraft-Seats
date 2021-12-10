@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>jQuery Test - Aircraft Seats</title>
+        <meta name="description" content="">
+        <meta name="author" content="j@parmee.me">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            body {font-size: 12px; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+            .code { font-family: monospace; background: #ffeff0; color: darkgreen; word-wrap: break-word; box-decoration-break: clone; padding: .1rem .3rem .2rem; border-radius: .2rem;}
+            ul li {line-height: 1.3rem;}
+            button { appearance: none; background-color: #FAFBFC; border: 1px solid rgba(27, 31, 35, 0.15); border-radius: 6px; box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset; box-sizing: border-box; color: #24292E; cursor: pointer; display: inline-block; font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; font-size: 14px; font-weight: 500; line-height: 20px; list-style: none; padding: 6px 16px; position: relative; transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1); user-select: none; -webkit-user-select: none; touch-action: manipulation; vertical-align: middle; white-space: nowrap; word-wrap: break-word; } button:hover { background-color: #F3F4F6; text-decoration: none; transition-duration: 0.1s; } button:disabled { background-color: #FAFBFC; border-color: rgba(27, 31, 35, 0.15); color: #959DA5; cursor: default; } button:active { background-color: #EDEFF2; box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset; transition: none 0s; } button:focus { outline: 1px transparent; } button:before { display: none; } button:-webkit-details-marker { display: none; }
+            button.available {background-color: lightgoldenrodyellow; }
+            button.selected {background-color: green;} 
+            button.unavailable { background-color: darkred; pointer-events:none;}
+            #booking { }
+            #plane { }
+            #cart { font-size: 24px; margin-bottom: 25px;}
+            #plane ol {list-style :none; border-left: 4px solid; border-right: 4px solid; padding-inline-start: 0px; width: 425px;}
+            #plane ul {list-style :none; display: flex;  flex-direction: row;  flex-wrap: nowrap;  justify-content: flex-start; padding-inline-start: 0px; }
+            #plane ul li { padding: 5px; position: relative; }
+            #plane ul li:nth-child(3){
+                margin-right: 14.28571428571429%;
+            }
+            .seat {width: 50px; height: 50px;}
+            label {font-weight: bold;}
+       </style>
+    </head>
+    <body>
+
+        <h1>jQuery DOM Manipulation - Aircraft Seat Selector</h1>        
+
+        <!-- Below is the only HTML you need to use in the tasks, do *NOT* adjust this HTML in any way -->
+        <div id="booking">
+            <label for="totalPassengers">Total Passengers:</label>
+            <input type="number" name="totalPassengers" id="totalPassengers" value="0">
+        </div>
+        <div id="plane">
+            <ol>
+                <li>
+                    <ul data-row="1">
+                        <li><button class="seat available" data-seat="A">1A</button></li>
+                        <li><button class="seat available" data-seat="B">1B</button></li>
+                        <li><button class="seat available" data-seat="C">1C</button></li>
+                        <li><button class="seat available" data-seat="D">1D</button></li>
+                        <li><button class="seat available" data-seat="E">1E</button></li>
+                        <li><button class="seat available" data-seat="F">1F</button></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul data-row="2">
+                        <li><button class="seat available" data-seat="A">2A</button></li>
+                        <li><button class="seat available" data-seat="B">2B</button></li>
+                        <li><button class="seat available" data-seat="C">2C</button></li>
+                        <li><button class="seat available" data-seat="D">2D</button></li>
+                        <li><button class="seat available" data-seat="E">2E</button></li>
+                        <li><button class="seat available" data-seat="F">2F</button></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul data-row="3">
+                        <li><button class="seat available" data-seat="A">3A</button></li>
+                        <li><button class="seat available" data-seat="B">3B</button></li>
+                        <li><button class="seat available" data-seat="C">3C</button></li>
+                        <li><button class="seat available" data-seat="D">3D</button></li>
+                        <li><button class="seat available" data-seat="E">3E</button></li>
+                        <li><button class="seat available" data-seat="F">3F</button></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul data-row="4">
+                        <li><button class="seat available" data-seat="A">4A</button></li>
+                        <li><button class="seat available" data-seat="B">4B</button></li>
+                        <li><button class="seat available" data-seat="C">4C</button></li>
+                        <li><button class="seat available" data-seat="D">4D</button></li>
+                        <li><button class="seat available" data-seat="E">4E</button></li>
+                        <li><button class="seat available" data-seat="F">4F</button></li>
+                    </ul>
+                </li><li>
+                    <ul data-row="5">
+                        <li><button class="seat available" data-seat="A">5A</button></li>
+                        <li><button class="seat available" data-seat="B">5B</button></li>
+                        <li><button class="seat available" data-seat="C">5C</button></li>
+                        <li><button class="seat available" data-seat="D">5D</button></li>
+                        <li><button class="seat available" data-seat="E">5E</button></li>
+                        <li><button class="seat available" data-seat="F">5F</button></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div id="seatList">
+            <h3>Passenger Seat List:</h3>
+            <ul>
+                <li>No Seats Selected</li>
+            </ul>
+        </div>
+        <div id="cart">
+            <b>Total Price:</b> €<span id="totalPrice">0.00</span>
+        </div>
+
+        <!-- This is your Javascript File - create this locally -->
+        <script src="./jQueryTest.js"></script>
+
+        <!-- Below are the tasks - No need to worry about below! -->
+        <hr/>
+        <p>You should create a Javascript file called <span class="code">jQueryTest.js</span> locally to this HTML file - all code should be in this file. Do not edit this HTML document.</span></p>
+        <h2>Task 1</h2>
+        <ul>
+            <li>Each Standard Fare costs €25, whenever the <span class="code">#totalPassengers</span> value changes, update the total price in <span class="code">#totalPrice</span></li>
+            <li>Prevent <span class="code">#totalPassengers</span> from going below 0 passengers, or above 9 passengers.</li>
+        </ul>
+
+        <h2>Task 2</h2>
+        <ul>
+            <li>When <span class="code">button.seat</span> is clicked, if seat has the class <span class="code">.available</span>, remove the elements class <span class="code">.available</span> and add the class <span class="code">.selected</span> in its place</li>
+            <li>When <span class="code">button.seat</span> is clicked, if seat has the class <span class="code">.selected</span>, remove the elements class <span class="code">.selected</span> and add the class <span class="code">.available</span> in its place</li>
+        </ul>
+
+        <h2>Task 3</h2>
+        <ul>
+            <li>Seats 1D, 3F, and 4B have already been reserved, remove the elements class <span class="code">.available</span> and add the class <span class="code">.unavailable</span> in its place on page load.</li>
+            <li><b>Note:</b> Ensure your code does not permit selecting <span class="code">.unavailable</span> seats.</li>
+        </ul>
+
+        <h2>Task 4</h2>
+        <ul>
+            <li>Limit <span class="code">button.seats</span> selected to the quantity of <span class="code">#totalPassengers</span></li>
+            <li>When <span class="code">#totalPassengers</span> changes, remove all seat selections.</li>
+        </ul>
+
+        <h2>Task 5</h2>
+        <ul>
+            <li>When each seat is selected, ensure each passengers seats are listed in <span class="code">#seatList > ul</span> in the format of "Passenger 1: 3B" for each list item.</li>
+            <li>Ensure that when a seat is changed or removed, that the <span class="code">#seatList > ul</span> stays up to date, if no seats are selected, add a single list item that says "No Seats Selected"</li>
+        </ul>
+
+        <h2>Task 6</h2>
+        <ul>
+            <li>The first row of seats are "Extra Leg Room" and incur an additional charge of €15 - ensure this is reflected in the total price and note the extra charge in <span class="code">#seatList > ul</span> against the relevant seats.</li>
+        </ul>
+
+        <h2>Task 7</h2>
+        <ul>
+            <li>You've been asked to add a COVID restrictions mode to the booking form, when <span class="code">var covidRestrictions = true;</span> you must ensure all middle seats are unavailable, however, as the total rows of the plane can vary, you must use loops.</li>
+            <li>Ensure COVID restrictions are turned on.</li>
+        </ul>
+
+        <h2>Task 8</h2>
+        <ul>
+            <li>The aircraft has changed and it now has 7 rows, dynamically add 2 extra rows of seats on page load.</li>
+            <li>Ensure all functionality from the previous tasks still operate on these 2 extra rows.</li>
+         </ul>
+
+        <h2>Task 9 / Advanced (Optional)</h2>
+        <ul>
+            <li>Create a variable <span class="code">var totalRows = 15;</span> which allows you to dynamically create as many rows required by overwriting <span class="code">#plane</span></li>
+            <li>Ensure all functionality from the previous tasks still operate on any sized aircraft.</li>
+        </ul>
+        
+    </body>
+</html>
