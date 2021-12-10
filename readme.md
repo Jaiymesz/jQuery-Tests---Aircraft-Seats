@@ -1,5 +1,6 @@
 # jQuery DOM Manipulation - Aircraft Seat Selector
 You should create a Javascript file called jQueryTest.js locally to this HTML file - all code should be in this file. Do not edit this HTML document.
+*Hint: Functions you may need - [.each()](https://api.jquery.com/each/) [.parent()](https://api.jquery.com/parent/) [.data()](https://api.jquery.com/data/)*
 
 ## Task 1
 - Each Standard Fare costs €25, whenever the `#totalPassengers` value changes, update the total price in `#totalPrice`
@@ -11,7 +12,7 @@ You should create a Javascript file called jQueryTest.js locally to this HTML fi
 
 ## Task 3
 - Seats 1D, 3F, and 4B have already been reserved, remove the elements class `.available` and add the class `.unavailable` in its place on page load.
-- Note: Ensure your code does not permit selecting `.unavailable` seats.
+- Ensure your code does not permit selecting `.unavailable` seats.
 
 ## Task 4
 - Limit `button.seats` selected to the quantity of `#totalPassengers`
@@ -29,9 +30,16 @@ You should create a Javascript file called jQueryTest.js locally to this HTML fi
 - Ensure COVID restrictions are turned on.
 
 ## Task 8
+- When #checkout is clicked, complete the following validation:
+- - `#totalPassengers` is greater than 0, if not, alert the user they must specify atleast 1 passenger to checkout.
+- - `#totalPassengers` is equal to the number of seats selected, if not, alert the user to reserve all seats for all passengers.
+- - `#termsAndConditions` is checked, if not, alert the user they must agree to the Terms and Conditions.
+- If validation passes, mark all selected seats as `.unavailable`, display an alert saying the booking was successful, and clear the form (T&C's unchecked, Total Passengers = 0,  Reset Seat List, Total Price = 0.00) to allow another reservation.
+
+## Task 9
 - The aircraft has changed and it now has 7 rows, dynamically add 2 extra rows of seats on page load.
 - Ensure all functionality from the previous tasks still operate on these 2 extra rows.
 
-## Task 9 / Advanced (Optional)
+## Task 10 / Advanced (Optional)
 - Create a variable `var totalRows = 15;` which allows you to dynamically create as many rows required by overwriting `#plane`
 - Ensure all functionality from the previous tasks still operate on any sized aircraft.
