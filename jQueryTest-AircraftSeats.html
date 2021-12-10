@@ -14,19 +14,21 @@
             ul li {line-height: 1.3rem;}
             button { appearance: none; background-color: #FAFBFC; border: 1px solid rgba(27, 31, 35, 0.15); border-radius: 6px; box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset; box-sizing: border-box; color: #24292E; cursor: pointer; display: inline-block; font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; font-size: 14px; font-weight: 500; line-height: 20px; list-style: none; padding: 6px 16px; position: relative; transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1); user-select: none; -webkit-user-select: none; touch-action: manipulation; vertical-align: middle; white-space: nowrap; word-wrap: break-word; } button:hover { background-color: #F3F4F6; text-decoration: none; transition-duration: 0.1s; } button:disabled { background-color: #FAFBFC; border-color: rgba(27, 31, 35, 0.15); color: #959DA5; cursor: default; } button:active { background-color: #EDEFF2; box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset; transition: none 0s; } button:focus { outline: 1px transparent; } button:before { display: none; } button:-webkit-details-marker { display: none; }
             button.available {background-color: lightgoldenrodyellow; }
-            button.selected {background-color: green;} 
+            button.selected {    background-color: green; background-image: url(http://simpleicon.com/wp-content/uploads/user1.png); background-position: center; background-size: 50px; background-repeat: no-repeat;} 
             button.unavailable { background-color: darkred; pointer-events:none;}
-            #booking { }
-            #plane { }
             #cart { font-size: 24px; margin-bottom: 25px;}
-            #plane ol {list-style :none; border-left: 4px solid; border-right: 4px solid; padding-inline-start: 0px; width: 425px;}
+            #cart button {margin-top: 10px;}
+            #plane ol {list-style :none; border-left: 4px solid; border-right: 4px solid; padding-inline-start: 0px; width: 450px;}
             #plane ul {list-style :none; display: flex;  flex-direction: row;  flex-wrap: nowrap;  justify-content: flex-start; padding-inline-start: 0px; }
+            #plane ul.header li.sh {width:50px; font-size: 16px; font-weight:bold; text-align: center;}
+            #plane ul li.header {font-size: 16px; font-weight:bold; text-align: center; height: 50px;  display: flex; flex-direction: row; align-items: center;}
             #plane ul li { padding: 5px; position: relative; }
-            #plane ul li:nth-child(3){
+            #plane ul li:nth-child(4){
                 margin-right: 14.28571428571429%;
             }
-            .seat {width: 50px; height: 50px;}
+            .seat {width: 50px; height: 50px;}            
             label {font-weight: bold;}
+            small {font-size: 12px;}
        </style>
     </head>
     <body>
@@ -41,52 +43,68 @@
         <div id="plane">
             <ol>
                 <li>
+                    <ul class='header'>
+                        <li>&nbsp;&nbsp;&nbsp;</li>
+                        <li class="sh">A</li>
+                        <li class="sh">B</li>
+                        <li class="sh">C</li>
+                        <li class="sh">D</li>
+                        <li class="sh">E</li>
+                        <li class="sh">F</li>
+                    </ul>
+                </li>
+                <li>
                     <ul data-row="1">
-                        <li><button class="seat available" data-seat="A">1A</button></li>
-                        <li><button class="seat available" data-seat="B">1B</button></li>
-                        <li><button class="seat available" data-seat="C">1C</button></li>
-                        <li><button class="seat available" data-seat="D">1D</button></li>
-                        <li><button class="seat available" data-seat="E">1E</button></li>
-                        <li><button class="seat available" data-seat="F">1F</button></li>
+                        <li class="header">1</li>
+                        <li><button class="seat available" data-seat="A"></button></li>
+                        <li><button class="seat available" data-seat="B"></button></li>
+                        <li><button class="seat available" data-seat="C"></button></li>
+                        <li><button class="seat available" data-seat="D"></button></li>
+                        <li><button class="seat available" data-seat="E"></button></li>
+                        <li><button class="seat available" data-seat="F"></button></li>
                     </ul>
                 </li>
                 <li>
                     <ul data-row="2">
-                        <li><button class="seat available" data-seat="A">2A</button></li>
-                        <li><button class="seat available" data-seat="B">2B</button></li>
-                        <li><button class="seat available" data-seat="C">2C</button></li>
-                        <li><button class="seat available" data-seat="D">2D</button></li>
-                        <li><button class="seat available" data-seat="E">2E</button></li>
-                        <li><button class="seat available" data-seat="F">2F</button></li>
+                        <li class="header">2</li>
+                        <li><button class="seat available" data-seat="A"></button></li>
+                        <li><button class="seat available" data-seat="B"></button></li>
+                        <li><button class="seat available" data-seat="C"></button></li>
+                        <li><button class="seat available" data-seat="D"></button></li>
+                        <li><button class="seat available" data-seat="E"></button></li>
+                        <li><button class="seat available" data-seat="F"></button></li>
                     </ul>
                 </li>
                 <li>
                     <ul data-row="3">
-                        <li><button class="seat available" data-seat="A">3A</button></li>
-                        <li><button class="seat available" data-seat="B">3B</button></li>
-                        <li><button class="seat available" data-seat="C">3C</button></li>
-                        <li><button class="seat available" data-seat="D">3D</button></li>
-                        <li><button class="seat available" data-seat="E">3E</button></li>
-                        <li><button class="seat available" data-seat="F">3F</button></li>
+                        <li class="header">3</li>
+                        <li><button class="seat available" data-seat="A"></button></li>
+                        <li><button class="seat available" data-seat="B"></button></li>
+                        <li><button class="seat available" data-seat="C"></button></li>
+                        <li><button class="seat available" data-seat="D"></button></li>
+                        <li><button class="seat available" data-seat="E"></button></li>
+                        <li><button class="seat available" data-seat="F"></button></li>
                     </ul>
                 </li>
                 <li>
                     <ul data-row="4">
-                        <li><button class="seat available" data-seat="A">4A</button></li>
-                        <li><button class="seat available" data-seat="B">4B</button></li>
-                        <li><button class="seat available" data-seat="C">4C</button></li>
-                        <li><button class="seat available" data-seat="D">4D</button></li>
-                        <li><button class="seat available" data-seat="E">4E</button></li>
-                        <li><button class="seat available" data-seat="F">4F</button></li>
+                        <li class="header">4</li>
+                        <li><button class="seat available" data-seat="A"></button></li>
+                        <li><button class="seat available" data-seat="B"></button></li>
+                        <li><button class="seat available" data-seat="C"></button></li>
+                        <li><button class="seat available" data-seat="D"></button></li>
+                        <li><button class="seat available" data-seat="E"></button></li>
+                        <li><button class="seat available" data-seat="F"></button></li>
                     </ul>
                 </li><li>
                     <ul data-row="5">
-                        <li><button class="seat available" data-seat="A">5A</button></li>
-                        <li><button class="seat available" data-seat="B">5B</button></li>
-                        <li><button class="seat available" data-seat="C">5C</button></li>
-                        <li><button class="seat available" data-seat="D">5D</button></li>
-                        <li><button class="seat available" data-seat="E">5E</button></li>
-                        <li><button class="seat available" data-seat="F">5F</button></li>
+                        <li class="header">5</li>
+                        <li><button class="seat available" data-seat="A"></button></li>
+                        <li><button class="seat available" data-seat="B"></button></li>
+                        <li><button class="seat available" data-seat="C"></button></li>
+                        <li><button class="seat available" data-seat="D"></button></li>
+                        <li><button class="seat available" data-seat="E"></button></li>
+                        <li><button class="seat available" data-seat="F"></button></li>
                     </ul>
                 </li>
             </ol>
@@ -98,7 +116,10 @@
             </ul>
         </div>
         <div id="cart">
-            <b>Total Price:</b> €<span id="totalPrice">0.00</span>
+            <b>Total Price:</b> €<span id="totalPrice">0.00</span><br>
+            <input type="checkbox" name="termsAndConditions" id="termsAndConditions"> <small>I agree to the <a href="#">Terms and Conditions</a></small>
+            <br>
+            <button id="checkout">Checkout</button>
         </div>
 
         <!-- This is your Javascript File - create this locally -->
@@ -107,6 +128,7 @@
         <!-- Below are the tasks - No need to worry about below! -->
         <hr/>
         <p>You should create a Javascript file called <span class="code">jQueryTest.js</span> locally to this HTML file - all code should be in this file. Do not edit this HTML document.</span></p>
+        <p><i>Hint: Functions you may need - <a href="https://api.jquery.com/each/" target="_blank">.each()</a> <a href="https://api.jquery.com/parent/" target="_blank">.parent()</a> <a href="https://api.jquery.com/data/" target="_blank">.data()</a></i></p>
         <h2>Task 1</h2>
         <ul>
             <li>Each Standard Fare costs €25, whenever the <span class="code">#totalPassengers</span> value changes, update the total price in <span class="code">#totalPrice</span></li>
@@ -122,7 +144,7 @@
         <h2>Task 3</h2>
         <ul>
             <li>Seats 1D, 3F, and 4B have already been reserved, remove the elements class <span class="code">.available</span> and add the class <span class="code">.unavailable</span> in its place on page load.</li>
-            <li><b>Note:</b> Ensure your code does not permit selecting <span class="code">.unavailable</span> seats.</li>
+            <li>Ensure your code does not permit selecting <span class="code">.unavailable</span> seats.</li>
         </ul>
 
         <h2>Task 4</h2>
@@ -150,11 +172,22 @@
 
         <h2>Task 8</h2>
         <ul>
+            <li>When <span class="code">#checkout</span> is clicked, complete the following validation:
+                <ul>
+                    <li><span class="code">#totalPassengers</span> is greater than 0, if not, alert the user they must specify atleast 1 passenger to checkout.</li>
+                    <li><span class="code">#totalPassengers</span> is equal to the number of seats selected, if not, alert the user to reserve all seats for all passengers.</li>
+                    <li><span class="code">#termsAndConditions</span> is checked, if not, alert the user they must agree to the Terms and Conditions.</li>
+                </ul></li>
+            <li>If validation passes, mark all selected seats as <span class="code">.unavailable</span>, display an alert saying the booking was successful, and clear the form (T&C's unchecked, Total Passengers = 0, Reset Seat List, Total Price = 0.00) to allow another reservation.</li>
+        </ul>
+
+        <h2>Task 9</h2>
+        <ul>
             <li>The aircraft has changed and it now has 7 rows, dynamically add 2 extra rows of seats on page load.</li>
             <li>Ensure all functionality from the previous tasks still operate on these 2 extra rows.</li>
          </ul>
 
-        <h2>Task 9 / Advanced (Optional)</h2>
+        <h2>Task 10 / Advanced (Optional)</h2>
         <ul>
             <li>Create a variable <span class="code">var totalRows = 15;</span> which allows you to dynamically create as many rows required by overwriting <span class="code">#plane</span></li>
             <li>Ensure all functionality from the previous tasks still operate on any sized aircraft.</li>
