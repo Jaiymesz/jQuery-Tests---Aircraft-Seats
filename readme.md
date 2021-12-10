@@ -27,15 +27,15 @@ You should create a Javascript file called jQueryTest.js locally to this HTML fi
 - The first row of seats are "Extra Leg Room" and incur an additional charge of €15 - ensure this is reflected in the total price and note the extra charge in `#seatList > ul` against the relevant seats.
 
 ## Task 7
-- You've been asked to add a COVID restrictions mode to the booking form, when `var covidRestrictions = true;` you must ensure all middle seats are unavailable, however, as the total rows of the plane can vary, you must use loops.
-- Ensure COVID restrictions are turned on.
-
-## Task 8
 - When #checkout is clicked, complete the following validation:
 - - `#totalPassengers` is greater than 0, if not, alert the user they must specify atleast 1 passenger to checkout.
 - - `#totalPassengers` is equal to the number of seats selected, if not, alert the user to reserve all seats for all passengers.
 - - `#termsAndConditions` is checked, if not, alert the user they must agree to the Terms and Conditions.
 - If validation passes, mark all selected seats as `.unavailable`, display an alert saying the booking was successful, and clear the form (T&C's unchecked, Total Passengers = 0,  Reset Seat List, Total Price = 0.00) to allow another reservation.
+
+## Task 8
+- You've been asked to add a COVID restrictions mode to the booking form, when `var covidRestrictions = true;` you must ensure all middle seats are unavailable, however, as the total rows of the plane can vary, you must use loops.
+- Ensure COVID restrictions are turned on.
 
 ## Task 9
 - The aircraft has changed and it now has 7 rows, dynamically add 2 extra rows of seats on page load.
