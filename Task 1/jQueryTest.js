@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(function() {
   
-    $("#totalPassengers").change(function(){
+    $("#totalPassengers").on("change", function(){
 
         if($(this).val() < 0){
 
