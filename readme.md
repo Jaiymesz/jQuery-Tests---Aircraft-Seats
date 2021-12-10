@@ -41,6 +41,10 @@ You should create a Javascript file called jQueryTest.js locally to this HTML fi
 - The aircraft has changed and it now has 7 rows, dynamically add 2 extra rows of seats on page load.
 - Ensure all functionality from the previous tasks still operate on these 2 extra rows.
 
-## Task 10 / Advanced (Optional)
+## Task 10 / Advanced
+- From task 7 - if `#totalPassengers` is not equal to seats selected, randomly select available seats for the passengers missing on checkout instead of showing an error.
+- Show an alert listing the automatically booked seat numbers.
+
+## Task 11 / Advanced
 - Create a variable `var totalRows = 15;` which allows you to dynamically create as many rows required by overwriting `#plane`
 - Ensure all functionality from the previous tasks still operate on any sized aircraft.
