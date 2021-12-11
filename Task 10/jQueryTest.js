@@ -34,7 +34,9 @@ $(function() {
 
     $("#checkout").on("click",function(){
         
-        if($("button.seat.selected").length < $("#totalPassengers").val())randomSeats();
+        if($("button.seat.selected").length < $("#totalPassengers").val()){
+            if(!randomSeats())return;
+        }
 
         if($("#totalPassengers").val()==0)alert("You must enter at least one passenger to checkout.");
         else if(!$("#termsAndConditions").is(":checked"))alert("You must agree to the Terms and Conditions to checkout.");
@@ -75,9 +77,10 @@ $(function() {
         let seatsToAllocate = $("#totalPassengers").val() - $("button.seat.selected").length;
         let allocatedSeats =  new Array();
         let remainingSeats = $("button.available").length;
-        
+
         if(remainingSeats<seatsToAllocate){
             alert("Sorry, there are insuffucient seats available for this booking.");
+            return false;
         }else{
             for (var i = 0; i < seatsToAllocate; i++){
                 let seat = $("button.available:eq("+(remainingSeats-1)+")").data("seat");
@@ -89,6 +92,7 @@ $(function() {
 
             updateSeats();
             alert("We have automatically allocated the following seats: "+allocatedSeats.join(", "));
+            return true;
         }
     }
 
