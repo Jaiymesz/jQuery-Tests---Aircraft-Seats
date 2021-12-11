@@ -1,0 +1,21 @@
+{
+    "rows": 20,
+    "covidRestrictions": true,
+    "unavailable": [
+        "1D",
+        "3F",
+        "4B",
+        "5F",
+        "7A",
+        "8A",
+        "8B",
+        "8C",
+        "9F",
+        "10C",
+        "11D",
+        "11F",
+        "13A",
+        "14D",
+        "16D"
+    ]
+}
