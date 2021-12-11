@@ -50,8 +50,7 @@ $(function() {
         recalculateCart();
     });
 
-    $("#checkout").on("click",function(){
-        
+    $("#checkout").on("click",function(){        
         if($("button.seat.selected").length < $("#totalPassengers").val()){
             if(!randomSeats())return;
         }
@@ -79,8 +78,7 @@ $(function() {
                 if($(this).closest("ul[data-row]").data("row")==1)extraTxt = ' ** Extra Leg Room €15 **';  
                 $("#seatList ul").append("<li>Passenger "+passengerI+": Seat "+$(this).closest("ul[data-row]").data("row")+$(this).data("seat")+extraTxt+"</li>"); 
                 passengerI++;        
-            });
-        
+            });        
         }
     }
 
