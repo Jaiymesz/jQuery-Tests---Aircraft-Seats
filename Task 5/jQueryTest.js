@@ -29,7 +29,25 @@ $(function() {
             }
         }else if($(this).hasClass("selected"))$(this).removeClass("selected").addClass("available");
 
+        updateSeatList();
+
     });
+
+    function updateSeatList(){
+        var passengerI = 1;
+        if( $("button.seat.selected").length==0){
+
+            $("#seatList ul").html("<li>No Seats Selected</li>");
+
+        }else{
+            $("#seatList ul").html("");
+            $("button.seat.selected").each(function(i, val){
+                $("#seatList ul").append("<li>Passenger "+passengerI+": Seat "+$(this).closest("ul[data-row]").data("row")+$(this).data("seat")+"</li>");     
+                passengerI++;        
+            });
+        
+        }
+    }
 
     // Unavailable Seats
     $("ul[data-row=1] > li > button[data-seat=D]").removeClass("available").addClass("unavailable");
