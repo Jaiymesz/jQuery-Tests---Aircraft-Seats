@@ -34,16 +34,15 @@ $(function() {
     });
 
     function updateSeatList(){
-        var passengerI = 1;
+        
         if( $("button.seat.selected").length==0){
 
             $("#seatList ul").html("<li>No Seats Selected</li>");
 
         }else{
             $("#seatList ul").html("");
-            $("button.seat.selected").each(function(i, val){
-                $("#seatList ul").append("<li>Passenger "+passengerI+": Seat "+$(this).closest("ul[data-row]").data("row")+$(this).data("seat")+"</li>");     
-                passengerI++;        
+            $("button.seat.selected").each(function(i){
+                $("#seatList ul").append("<li>Passenger "+(i+1)+": Seat "+$(this).closest("ul[data-row]").data("row")+$(this).data("seat")+"</li>");         
             });
         
         }
